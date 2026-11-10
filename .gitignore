@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+dist/
+build/
+.pytest_cache/
+
+# Local render output (the committed images live in docs/images/)
+/out/
+/shots/
+
+# Secrets
+.env
+.env.*

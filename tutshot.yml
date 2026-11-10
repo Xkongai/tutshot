@@ -1,0 +1,45 @@
+# This story renders the screenshots in tutshot's own README:
+#   tutshot render tutshot.yml --out docs/images
+title: tutshot
+theme: dusk
+cwd: ~/project
+width: 88
+
+steps:
+  - id: install
+    caption: Install tutshot — no browser needed
+    command: pip install tutshot
+    output: |
+      Successfully installed tutshot-0.1.0
+
+  - id: init
+    caption: Write a sample story
+    command: tutshot init
+    output: |
+      Wrote tutshot.yml
+      Next: edit the steps, then run  tutshot render tutshot.yml
+
+  - id: edit
+    caption: Script each step — command, output and caption
+    command: cat tutshot.yml
+    output: |
+      title: my-cli
+      cwd: ~/project
+      steps:
+        - id: install
+          caption: Install my-cli
+          command: pip install my-cli
+          output: Successfully installed my-cli-1.0.0
+        - id: run
+          caption: Run it
+          command: my-cli greet "你好"
+          output: 你好, world!
+
+  - id: render
+    caption: Render one PNG per step, plus a storyboard
+    command: tutshot render --theme dusk
+    output: |
+      Rendered 2 step(s) from tutshot.yml with theme dusk:
+        docs/images/install.png  1018x276
+        docs/images/run.png  1018x276
+        docs/images/story.png  1018x523

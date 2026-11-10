@@ -1,0 +1,48 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "tutshot"
+version = "0.1.0"
+description = "Turn a short YAML command story into tutorial-style README screenshots — no browser, CJK-ready."
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Xkongai" }]
+keywords = ["screenshot", "terminal", "readme", "documentation", "tutorial", "cli", "png", "cjk", "chinese", "japanese"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Operating System :: OS Independent",
+  "Environment :: Console",
+  "Topic :: Documentation",
+  "Topic :: Multimedia :: Graphics",
+]
+dependencies = [
+  "typer>=0.12",
+  "pillow>=10.1",
+  "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+tutshot = "tutshot.cli:app"
+
+[project.urls]
+Homepage = "https://github.com/Xkongai/tutshot"
+Issues = "https://github.com/Xkongai/tutshot/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/tutshot"]
+
+[tool.hatch.build.targets.sdist]
+include = ["src", "tests", "examples", "README*.md", "CHANGELOG.md", "LICENSE", "tutshot.yml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

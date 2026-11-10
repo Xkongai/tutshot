@@ -1,0 +1,22 @@
+# A tiny story with Chinese and Japanese text, to show CJK rendering.
+# Render:  tutshot render examples/hello.yml --out docs/images/hello
+title: hello
+theme: nord
+cwd: ~/hello
+prompt: user@tutorial
+width: 72
+
+steps:
+  - id: say-zh
+    caption: 用中文打个招呼 · Say hello in Chinese
+    command: hello say "你好，世界"
+    output: |
+      你好，世界！
+      ✓ 已写入 ./out/greeting.txt（6 个字符）
+
+  - id: say-ja
+    caption: 日本語もそのまま · Japanese works too
+    command: hello say "こんにちは、世界" --lang ja
+    output: |
+      こんにちは、世界！
+      ✓ ./out/greeting.txt に保存しました

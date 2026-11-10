@@ -1,0 +1,11 @@
+title: demo
+cwd: ~/project
+width: 60
+steps:
+  - id: one
+    caption: First step
+    command: demo run
+    output: |
+      ok
+  - id: two
+    command: demo status

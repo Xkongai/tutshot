@@ -1,0 +1,10 @@
+title: hello
+cwd: ~/hello
+prompt: user@tutorial
+steps:
+  - id: say
+    caption: 用中文打个招呼
+    command: hello say "你好，世界"
+    output: |
+      你好，世界！
+      こんにちは

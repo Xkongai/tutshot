@@ -1,0 +1,14 @@
+# Rendered for the README theme table:
+#   tutshot render examples/themes/paper.yml --theme paper --out docs/images/themes/paper --no-sheet
+title: tutshot
+cwd: ~/project
+width: 72
+
+steps:
+  - id: preview
+    caption: Same story, three themes
+    command: tutshot render --theme paper
+    output: |
+      Rendered 2 step(s) from tutshot.yml with theme paper:
+        docs/images/install.png  1018x276
+        docs/images/story.png  1018x523

@@ -1,0 +1,5 @@
+steps:
+  - id: a
+    command: echo 1
+  - id: a
+    command: echo 2

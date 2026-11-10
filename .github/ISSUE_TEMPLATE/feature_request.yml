@@ -1,0 +1,31 @@
+name: Feature request
+description: Suggest an idea for tutshot
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: use_case
+    attributes:
+      label: Use case
+      description: What are you trying to document, and why is it hard today?
+      placeholder: My tutorial has a step where the output is a table, and I'd like to...
+    validations:
+      required: true
+  - type: textarea
+    id: expected_story
+    attributes:
+      label: Expected story syntax / command
+      description: How would you like to write it in tutshot.yml or use it from the CLI?
+      render: yaml
+      placeholder: |
+        steps:
+          - id: table
+            command: my-tool list
+            output: ...
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+    validations:
+      required: false
